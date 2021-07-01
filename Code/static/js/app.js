@@ -75,7 +75,7 @@ d3.json("../../data/samples.json").then((incomingData) => {
         // plot filtered data 
         plotData(filteredData);
 
+        // log change made
+        console.log("Change Event Handled")
     }
-
-    
 })
