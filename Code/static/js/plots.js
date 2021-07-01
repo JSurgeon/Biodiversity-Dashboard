@@ -59,11 +59,12 @@ function plotData(filtered) {
     };
     Plotly.newPlot("bubble", bubble_data, layout);
 
-
+    // NOTE: NEED TO MESS WITH SIZE OF BUBBLE MARKERS. TOO BIG AND TOO SMALL 
+        // maybe ifs: if too big, cap at x_size; if too small, cap at z_size
 
 
     ///////////////////////////////
-    // create demographic chart //
+    // create guage chart //
     /////////////////////////////
 
     // CODE HERE ***

@@ -24,9 +24,17 @@ d3.json("../../data/samples.json").then((incomingData) => {
     // log select node *DEBUG*
     console.log(d3.select("#selDataset").node());
     
-    // initialize page with data from first ID No.
+    //////////////////////////////////////////////////
+    // initialize page with data from first ID No. //
+    ////////////////////////////////////////////////
     var filtered = filterData(data, data.names[0]);
     plotData(filtered);
+
+    var metadata = d3.select("#sample-metadata");
+    Object.entries(data.metadata[0]).forEach(([key, entry]) => {
+        //console.log(`${key}: ${entry}`);
+        metadata.append("div").append("strong").text(`${key.toUpperCase()}: ${entry}`);
+    })
     
     ///////////////////////////////////////////
     // handle event- ID No. changing //
