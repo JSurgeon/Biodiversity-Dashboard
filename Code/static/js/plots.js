@@ -41,15 +41,26 @@ function plotData(filtered) {
     // create bubble chart //
     ////////////////////////
 
-    trace2 = {
+    var trace2 = {
         x : otus,
         y : values,
         mode : 'markers',
         marker: {
+            color: otus,
             size: values
         },
-        color: otus
-    }
+        text : labels
+    };
+    var bubble_data = [trace2];
+    var layout = {
+        title : "Bacteria Cultures Per Sample",
+        height: 600,
+        width: 1200,
+        showlegend: false,
+        xaxis : {title: "OTU ID"}
+    };
+    Plotly.newPlot("bubble", bubble_data, layout);
+
 
 
 
