@@ -2,7 +2,6 @@
 
 // use d3 to read in samples.json located in data directory
 d3.json("../../data/samples.json").then((incomingData) => {
-  //  console.log(incomingData.samples);
     
     // save json read by d3 in variable 
     var data = incomingData;
@@ -24,12 +23,15 @@ d3.json("../../data/samples.json").then((incomingData) => {
 
     // log select node *DEBUG*
     console.log(d3.select("#selDataset").node());
-
+    
+    // initialize page with data from first ID No.
+    var filtered = filterData(data, data.names[0]);
+    plotData(filtered);
     
     ///////////////////////////////////////////
-    // handle event- Subject ID no changing //
+    // handle event- ID No. changing //
     /////////////////////////////////////////
-    d3.select("#selDataset").on("change", onChange);
+    d3.selectAll("#selDataset").on("change", onChange);
     function onChange() {
         // reference select tag
         var select = d3.select("#selDataset");
@@ -39,14 +41,13 @@ d3.json("../../data/samples.json").then((incomingData) => {
         // log value *DEBUG*
         console.log(selected_id);
 
-        // filter data based on value
-        var id = selected_id;
-        function filterSamples(sample) {
-            return sample.id === id;
-        }
 
-        var filtered = data.samples.filter(filterSamples)[0];
+        var filtered = filterData(data, selected_id);
+        // log filtered data *DEBUG*
+        console.log(`filtered data: `);
         console.log(filtered);
+
+        // plot data
         plotData(filtered);
 
     }
