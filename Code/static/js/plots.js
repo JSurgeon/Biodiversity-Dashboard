@@ -63,9 +63,9 @@ function plotData(filtered) {
         // maybe ifs: if too big, cap at x_size; if too small, cap at z_size
 
 
-    ///////////////////////////////
+    /////////////////////////
     // create guage chart //
-    /////////////////////////////
+    ///////////////////////
 
     // CODE HERE ***
 

@@ -22,21 +22,24 @@ d3.json("../../data/samples.json").then((incomingData) => {
         option.text(name);
     })
 
-    // log select node *DEBUG*
-    console.log(d3.select("#selDataset").node());
-    
+
     //////////////////////////////////////////////////
     // initialize page with data from first ID No. //
     ////////////////////////////////////////////////
+
+    // filter data with first 'samples' object from json 
     var filteredData = filterData(data, data.names[0]);
+    // plot filtered results
     plotData(filteredData);
 
+    // use d3 to select html tag and append metadata via Object.entries loop
     var metadata_html = d3.select("#sample-metadata");
     Object.entries(data.metadata[0]).forEach(([key, entry]) => {
-        //console.log(`${key}: ${entry}`);
+        // create div, then strong element via d3. Append key and entry as text
         metadata_html.append("div").append("strong").text(`${key.toUpperCase()}: ${entry}`);
     })
     
+
     ///////////////////////////////////////////
     // handle event- ID No. changing //
     /////////////////////////////////////////
@@ -69,9 +72,10 @@ d3.json("../../data/samples.json").then((incomingData) => {
         // filter sample data based on selected value
         var filteredData = filterData(data, selected_id);
 
-        // plot filtered data
+        // plot filtered data 
         plotData(filteredData);
 
     }
 
+    
 })
