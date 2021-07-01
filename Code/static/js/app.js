@@ -5,7 +5,8 @@ d3.json("../../data/samples.json").then((incomingData) => {
     
     // save json read by d3 in variable 
     var data = incomingData;
-
+        
+    
     /////////////////////////////////////////////////////
     // dynamically generate list of ID options via d3 //    
     ///////////////////////////////////////////////////
@@ -46,18 +47,13 @@ d3.json("../../data/samples.json").then((incomingData) => {
         // reference select tag's value (will be number as a string)
         var selected_id = select.property("value");
 
-                // FIX THIS FILTER OF METADATA--->
-                                    // filter metadata based on selected value
-                                    // var meta = data.metadata.filter(meta => {
-                                    //     meta.id === selected_id;
-                                    // })
-                                    
-                                    
-                                    // function filterMeta(meta) {
-                                    //     return meta.id === selected_id;
-                                    // }
-                                    // var meta = data.metadata.filter(filterMeta);
-                                    // console.log(meta);
+        //filter metadata based on selected value
+        
+        function filterMeta(meta) {
+            return meta.id === parseInt(selected_id);
+        }
+        var meta = data.metadata.filter(filterMeta);
+        console.log(meta);
                                     
         // filter sample data based on selected value
         var filtered = filterData(data, selected_id);
