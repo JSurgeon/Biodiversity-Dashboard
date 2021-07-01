@@ -3,8 +3,8 @@
 function plotData(filtered) {
     // plotData expects a json object
 
-    // map filtered data to variables
-    var otus = filtered.otu_ids.map(id => `OTU ${id}`);
+    // map all of filtered data to variables
+    var otus = filtered.otu_ids.map(id => id);
     var values = filtered.sample_values.map(value => value);
     var labels = filtered.otu_labels.map(label => label);
 
@@ -12,14 +12,14 @@ function plotData(filtered) {
     // create horizontal bar chart for top 10 OTUs found in individual //
     ////////////////////////////////////////////////////////////////////
     
+    
     // slice top ten 
     var top_ten_otus = otus.slice(0,10);
     var top_ten_values = values.slice(0,10);
     var top_ten_labels = labels.slice(0,10);
 
-    // console.log(values);
-    // console.log(otus);
-    // console.log(labels);
+    // add string "OTU" to IDs
+    top_ten_otus = top_ten_otus.map(id => `OTU ${id}`);
 
 
     trace1 = {
@@ -41,7 +41,15 @@ function plotData(filtered) {
     // create bubble chart //
     ////////////////////////
 
-    // CODE HERE ***
+    trace2 = {
+        x : otus,
+        y : values,
+        mode : 'markers',
+        marker: {
+            size: values
+        },
+        color: otus
+    }
 
 
 
