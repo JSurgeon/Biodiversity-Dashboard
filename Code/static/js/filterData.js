@@ -9,3 +9,4 @@ function filterData(data, id) {
     }
     return data.samples.filter(filterSamples)[0];
 }
+

@@ -28,13 +28,13 @@ d3.json("../../data/samples.json").then((incomingData) => {
     //////////////////////////////////////////////////
     // initialize page with data from first ID No. //
     ////////////////////////////////////////////////
-    var filtered = filterData(data, data.names[0]);
-    plotData(filtered);
+    var filteredData = filterData(data, data.names[0]);
+    plotData(filteredData);
 
-    var metadata = d3.select("#sample-metadata");
+    var metadata_html = d3.select("#sample-metadata");
     Object.entries(data.metadata[0]).forEach(([key, entry]) => {
         //console.log(`${key}: ${entry}`);
-        metadata.append("div").append("strong").text(`${key.toUpperCase()}: ${entry}`);
+        metadata_html.append("div").append("strong").text(`${key.toUpperCase()}: ${entry}`);
     })
     
     ///////////////////////////////////////////
@@ -47,22 +47,30 @@ d3.json("../../data/samples.json").then((incomingData) => {
         // reference select tag's value (will be number as a string)
         var selected_id = select.property("value");
 
-        //filter metadata based on selected value
-        
+        // filter metadata based on selected value
         function filterMeta(meta) {
             return meta.id === parseInt(selected_id);
         }
-        var meta = data.metadata.filter(filterMeta);
-        console.log(meta);
-                                    
-        // filter sample data based on selected value
-        var filtered = filterData(data, selected_id);
-        // log filtered data *DEBUG*
-        console.log(`filtered data: `);
-        console.log(filtered);
+        var meta_obj = data.metadata.filter(filterMeta)[0];
 
-        // plot data
-        plotData(filtered);
+        // add metadata info to page via Object.entries loop
+        Object.entries(meta_obj).forEach(([key, entry]) => {
+            
+            // if entry === null, use filler text
+            if (!entry) {entry = "Not Specified";}
+
+            // remove data already existing in the demographic info box
+            d3.select("#sample-metadata>div").remove();
+            
+            // create div and strong elements to append key and entry as text
+            metadata_html.append("div").append("strong").text(`${key.toUpperCase()}: ${entry}`);
+        })                    
+
+        // filter sample data based on selected value
+        var filteredData = filterData(data, selected_id);
+
+        // plot filtered data
+        plotData(filteredData);
 
     }
 
