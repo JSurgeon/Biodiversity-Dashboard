@@ -16,16 +16,14 @@ function plotData(filtered) {
     
     // slice top ten 
     var top_ten_otus = string_otus.slice(0,10);
-    console.log(top_ten_otus);
     top_ten_otus = top_ten_otus.reverse();
-    console.log(top_ten_otus);
 
     var top_ten_values = values.slice(0,10);
     top_ten_values = top_ten_values.reverse();
 
     var top_ten_labels = labels.slice(0,10);
     top_ten_labels = top_ten_labels.reverse();
-    
+
     trace1 = {
         x : top_ten_values,
         y : top_ten_otus,
@@ -40,6 +38,7 @@ function plotData(filtered) {
         title : `Top 10 Bacteria Cultures Found`
     };
     Plotly.newPlot("bar",data,layout);
+
 
     //////////////////////////
     // create bubble chart //
@@ -75,7 +74,5 @@ function plotData(filtered) {
     ///////////////////////
 
     // CODE HERE ***
-
-    return 1;
 
 }
