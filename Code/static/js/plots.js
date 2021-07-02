@@ -8,7 +8,7 @@ function plotData(filtered) {
     var string_otus = otus.map(id => `OTU ${id}`);
     var values = filtered.sample_values.map(value => value);
     var labels = filtered.otu_labels.map(label => label);
-    
+
     //////////////////////////////////////////////////////////////////////
     // create horizontal bar chart for top 10 OTUs found in individual //
     ////////////////////////////////////////////////////////////////////
@@ -16,6 +16,10 @@ function plotData(filtered) {
     
     // slice top ten 
     var top_ten_otus = string_otus.slice(0,10);
+    console.log("hello?");
+    console.log(top_ten_otus);
+    var rev = top_ten_otus.reverse();
+    console.log(rev);
     var top_ten_values = values.slice(0,10);
     var top_ten_labels = labels.slice(0,10);
 
@@ -69,7 +73,6 @@ function plotData(filtered) {
 
     // CODE HERE ***
 
-        
-
+    return 1;
 
 }

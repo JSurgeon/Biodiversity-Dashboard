@@ -30,8 +30,11 @@ d3.json("../../data/samples.json").then((incomingData) => {
     // filter data with first 'samples' object from json 
     var filteredData = filterData(data, data.names[0]);
     // plot filtered results
-    plotData(filteredData);
-
+    
+    // plotData is acting strange! ***************
+    var uhh = plotData(filteredData);
+    console.log(uhh);
+    
     // use d3 to select html tag and append metadata via Object.entries loop
     var metadata_html = d3.select("#sample-metadata");
     Object.entries(data.metadata[0]).forEach(([key, entry]) => {
@@ -78,4 +81,5 @@ d3.json("../../data/samples.json").then((incomingData) => {
         // log change made
         console.log("Change Event Handled")
     }
+
 })
