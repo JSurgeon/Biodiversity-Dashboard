@@ -13,7 +13,6 @@ function plotData(filtered) {
     // create horizontal bar chart for top 10 OTUs found in individual //
     ////////////////////////////////////////////////////////////////////
     
-    
     // slice top ten 
     var top_ten_otus = string_otus.slice(0,10);
     top_ten_otus = top_ten_otus.reverse();
@@ -75,4 +74,6 @@ function plotData(filtered) {
 
     // CODE HERE ***
 
+
+    console.log("Plotting Handled");
 }
