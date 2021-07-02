@@ -32,8 +32,7 @@ d3.json("../../data/samples.json").then((incomingData) => {
     // plot filtered results
     
     // plotData is acting strange! ***************
-    var uhh = plotData(filteredData);
-    console.log(uhh);
+    plotData(filteredData);
     
     // use d3 to select html tag and append metadata via Object.entries loop
     var metadata_html = d3.select("#sample-metadata");
