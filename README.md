@@ -1,4 +1,4 @@
-# Dashboard for data visualization and exploration
+# Dashboard for data visualization of Belly Button Biodiversity
 Build an interactive dashboard meant to explore Belly Button Microbial Biodiversity using Plotly.js
 
 **Dataset:**
