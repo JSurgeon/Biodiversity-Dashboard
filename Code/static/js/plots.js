@@ -1,13 +1,17 @@
 // file to store plots function
 
-function plotData(filtered) {
-    // plotData expects a json object
+function plotData(subjectData) {
 
-    // map all of filtered data to variables
-    var otus = filtered.otu_ids.map(id => id);
+
+    // plotData expects an array of 2 json objects
+    var sampleData = subjectData[1];
+    var metadata = subjectData[0];
+
+    // map all of sample data to variables
+    var otus = sampleData.otu_ids.map(id => id);
     var string_otus = otus.map(id => `OTU ${id}`);
-    var values = filtered.sample_values.map(value => value);
-    var labels = filtered.otu_labels.map(label => label);
+    var values = sampleData.sample_values.map(value => value);
+    var labels = sampleData.otu_labels.map(label => label);
 
     //////////////////////////////////////////////////////////////////////
     // create horizontal bar chart for top 10 OTUs found in individual //
@@ -43,7 +47,6 @@ function plotData(filtered) {
     // create bubble chart //
     ////////////////////////
 
-    
     var trace2 = {
         x : otus,
         y : values,
@@ -72,8 +75,9 @@ function plotData(filtered) {
     // create guage chart //
     ///////////////////////
 
-    // CODE HERE ***
+    var washFreq = metadata.wfreq;
 
+    
 
     console.log("Plotting Handled");
 }
