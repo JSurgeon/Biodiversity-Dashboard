@@ -77,7 +77,19 @@ function plotData(subjectData) {
 
     var washFreq = metadata.wfreq;
 
-    
+    var trace3 = {
+        domain: { x: [0, 1], y: [0, 1] },
+        value: washFreq,
+        title: { text: "Wash Frequency: scrubs per week" },
+        type: "indicator",
+        mode: "gauge+number"
+    };
+
+    var data = [trace3];
+
+    var layout = { width: 600, height: 500, margin: { t: 0, b: 0 } };
+    Plotly.newPlot('gauge', data, layout);
+
 
     console.log("Plotting Handled");
 }
