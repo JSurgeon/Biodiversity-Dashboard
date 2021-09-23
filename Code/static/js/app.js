@@ -28,8 +28,8 @@ d3.json("../../data/samples.json").then((incomingData) => {
     ////////////////////////////////////////////////
 
     // filter data with first 'samples' object from json 
-    var filteredData = filterData(data, data.names[0]);
-    
+    var filteredData= filterData(data, data.names[0]); //filteredData is an array with two elements: [0] === metadata json, [1] === sample json
+
     // plot filtered results
     plotData(filteredData);
 
