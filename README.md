@@ -5,3 +5,4 @@ Build an interactive dashboard meant to explore Belly Button Microbial Biodivers
 [Belly Button Biodiversity Dataset](http://robdunnlab.com/projects/belly-button-biodiversity/results-and-data/)
 # Objectives
 **Step 1 - Plotly.js**
+1. Read in data from `<samples.json>`
