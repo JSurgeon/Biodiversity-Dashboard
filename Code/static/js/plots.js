@@ -78,13 +78,32 @@ function plotData(subjectData) {
     var washFreq = metadata.wfreq;
 
     var trace3 = {
-        domain: { x: [0, 1], y: [0, 1] },
         value: washFreq,
         title: { text: "Wash Frequency: scrubs per week" },
         type: "indicator",
-        mode: "gauge+number"
+        mode: "gauge+number",
+        gauge: {
+            bar: { color: "blue" },
+            axis: { range: [null, 9] },
+            steps: [
+                { range: [0, 1], color: "#f5f7f6" },
+                { range: [1, 2], color: "#e0ebf5"},
+                { range: [2, 3], color: "#c9def4"},
+                { range: [3, 4], color: "#bcd7f4"},
+                { range: [4, 5], color: "#afcff4"},
+                { range: [5, 6], color: "#a2c8f4"},
+                { range: [6, 7], color: "#89baf3"},
+                { range: [7, 8], color: "#76aff3"},
+                { range: [8, 9], color: "#5ca0f2"},
+            ],
+            threshold: {
+                line: { color: "blue", width: 4 },
+                thickness: 0.75,
+                value: washFreq
+            }
+        }
     };
-
+    
     var data = [trace3];
 
     var layout = { width: 600, height: 500, margin: { t: 0, b: 0 } };
