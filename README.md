@@ -8,3 +8,5 @@ Build an interactive dashboard meant to explore Belly Button Microbial Biodivers
 1. Read in data from `samples.json`
 2. Create horizantal bar chart with a dropdown menu of individuals to display the top 10 OTUs found in that individual  
 ![](/Images/horizontal_bar.png)
+
+3. Create bubble chart that displays each sample 
