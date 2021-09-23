@@ -13,5 +13,5 @@ Build an interactive dashboard meant to explore Belly Button Microbial Biodivers
 ![](/Images/bubble_chart.png)
 
 4. Display demographic metadata of individual selected in dropdown  
-![](/Imgaes/metadata.png)
+![](/Images/metadata.png)
 
