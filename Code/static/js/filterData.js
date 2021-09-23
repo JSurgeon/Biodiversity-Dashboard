@@ -3,7 +3,7 @@
 // filterData wrapper function
 // parameters:
     // (data === an array of json objects) (id === a number as a string)
-// returns a single json object
+// returns an array of two json objects
 function filterData(data, id) {
     function filterSamples(sampleData) {
         return sampleData.id === id;
