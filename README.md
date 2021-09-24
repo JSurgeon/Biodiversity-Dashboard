@@ -24,3 +24,7 @@ Build an interactive dashboard meant to explore Belly Button Microbial Biodivers
 
 5. Final Product
 ![](/Images/final_product.png)
+
+#
+Contact: jsurgeon29@gmail.com  
+LinkedIn: https://www.linkedin.com/in/jonathansurgeon
