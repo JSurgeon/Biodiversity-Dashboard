@@ -3,6 +3,12 @@ Build an interactive dashboard meant to explore Belly Button Microbial Biodivers
 
 **Dataset:**
 [Belly Button Biodiversity Dataset](http://robdunnlab.com/projects/belly-button-biodiversity/results-and-data/)
+
+**Run Application:**
+* Clone repo
+* Navigate into Code directory --> command: python -m http.server
+* Open corresponding localhost directory on web browser
+
 # Objectives
 ## Step 1 - Plotly.js
 1. Read in data from `samples.json`
@@ -15,3 +21,5 @@ Build an interactive dashboard meant to explore Belly Button Microbial Biodivers
 4. Display demographic metadata of individual selected in dropdown  
 ![](/Images/metadata.png)
 
+5. Final Product
+![](/Images/final_product.png)
