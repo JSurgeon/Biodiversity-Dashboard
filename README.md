@@ -5,6 +5,7 @@ Build an interactive dashboard meant to explore Belly Button Microbial Biodivers
 [Belly Button Biodiversity Dataset](http://robdunnlab.com/projects/belly-button-biodiversity/results-and-data/)
 
 **Run Application:**
+* Install python 3.6.12 or later
 * Clone repo
 * Navigate into Code directory --> command: python -m http.server
 * Open corresponding localhost directory on web browser
